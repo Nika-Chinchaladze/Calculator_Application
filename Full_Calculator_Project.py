@@ -386,17 +386,9 @@ class Ui_MainWindow(object):
         symbols = ["*", "/", "+", "-"]
         try:
             for i in symbols:
-                if i in screen and i == "+":
+                if i in screen and (i == "+" or i == "/" or i == "*" or i == "-"):
                     self.StringLabel.setText(str(eval(self.EnterLabel.text())))
 
-                elif i in screen and i == "/":
-                    self.StringLabel.setText(str(eval(self.EnterLabel.text())))
-                
-                elif i in screen and i == "*":
-                    self.StringLabel.setText(str(eval(self.EnterLabel.text())))
-                
-                elif i in screen and i == "-":
-                    self.StringLabel.setText(str(eval(self.EnterLabel.text())))
         except ZeroDivisionError:
             self.EnterLabel.setText("ERROR")
 
